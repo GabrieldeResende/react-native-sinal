@@ -7,8 +7,8 @@ const { Screen, Navigator } = createStackNavigator()
 export function StackRoutes() {
     return (
         <Navigator>
-            <Screen name='page1' component={page1} />
-            <Screen name='page2' component={page2} />
+            <Screen options={{ title: 'Menu', headerShown: false }} name='page1' component={page1} />
+            <Screen options={{ title: 'Menu', headerShown: false }} name='page2' component={page2} />
         </Navigator>
     )
 }

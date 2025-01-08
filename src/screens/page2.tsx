@@ -1,8 +1,13 @@
-import { Text, View, Image, TextInput } from "react-native";
+import { Text, View, Image, TextInput, Button } from "react-native";
 import { StyleSheet } from "react-native";
 import logo from '../../assets/bat-logo.png'
 
-export default function page2() {
+export default function page2({ navigation }: any) {
+
+    function navToPage1() {
+        navigation.navigate("page1")
+    }
+
     return (
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder="teste" />
@@ -13,6 +18,7 @@ export default function page2() {
             <Text style={styles.text}>Label</Text>
             <TextInput placeholder="Your text here" style={[styles.input, styles.inputMultiline]} editable multiline />
             <Text style={styles.button}>Enviar</Text>
+            <Text style={styles.button} onPress={navToPage1}>Voltar</Text>
         </View>
     )
 }
@@ -36,7 +42,8 @@ const styles = StyleSheet.create({
         color: 'white',
         padding: 20,
         width: '80%',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: 15
     },
     text: {
         marginBottom: 10
